@@ -1,0 +1,43 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OscilBox Demo</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: black;
+        }
+
+        canvas {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    
+    <script src="oscilbox.js"></script>
+    <script>
+        window.onload = function() {
+            let FPS = 30;
+            let obj = document.getElementById("canvas");
+            obj = new OscilBox(obj, 25, 20);
+            obj.setPrimary(255, 152, 0);
+
+            window.setInterval(function(){
+                obj.paint();
+                obj2.paint();
+            }, 1000/FPS);            
+        }
+    </script>
+</body>
+</html>
